@@ -10,14 +10,15 @@
 
 	fragment@0 {
 		target = <&scb>;
+		/* needed to avoid dtc warning */
+		#address-cells = <2>;
+		#size-cells = <1>;
+
 		__overlay__ {
-			/* needed to avoid dtc warning */
-			#address-cells = <2>;
-			#size-cells = <1>;
 			codec@7eb10000 {
 				compatible = "raspberrypi,rpivid-vid-decoder";
-				reg = <0x0 0x7eb10000 0x1000>,	/* INTC */
-				      <0x0 0x7eb00000 0x10000>; /* HEVC */
+				reg = <0x0 0x7eb10000  0x0 0x1000>,  /* INTC */
+				      <0x0 0x7eb00000  0x0 0x10000>; /* HEVC */
 				reg-names = "intc",
 					    "hevc";
 
