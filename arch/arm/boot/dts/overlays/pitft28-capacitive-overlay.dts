@@ -87,5 +87,7 @@
                 touch-invx  = <&ft6236>,"touchscreen-inverted-x?";
                 touch-invy  = <&ft6236>,"touchscreen-inverted-y?";
                 touch-swapxy = <&ft6236>,"touchscreen-swapped-x-y?";
+		gain = <&ft6236>,"gain:0";
+		threshold = <&ft6236>,"threshold:0";
         };
 };
